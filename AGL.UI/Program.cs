@@ -34,9 +34,9 @@ namespace AGL.UI
                 {
                     Console.WriteLine(pet.Name);
                 }
-
-                
+                                
                 List<Pet> catsOfFemaleOwners = person.GetCatsOwnedByFemaleOwners();
+
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("Female");
@@ -53,7 +53,6 @@ namespace AGL.UI
             {
                 Console.WriteLine("AN ERROR HAS OCCURED");
                 Console.ReadLine();
-
             }
         }
     }

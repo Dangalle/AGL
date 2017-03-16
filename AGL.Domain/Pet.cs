@@ -9,6 +9,5 @@ namespace AGL.Domain
     {
         public string  Name { get; set; }
         public string Type { get; set; }
-
     }
 }

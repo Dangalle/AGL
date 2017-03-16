@@ -19,7 +19,6 @@ namespace AGL.Domain
         public Person(IRepository<Person> repository)
         {
             this.repository = repository;
-
         }
         
         public List<Pet> GetCatsOwnedByMaleOwners()
@@ -30,8 +29,8 @@ namespace AGL.Domain
 
         private List<Pet> DoWork(List<Person> people)
         {
-            List<Pet> pets = people.Where(p=>p.Gender=="Male").Where(p=>p.pets != null).SelectMany(p => p.pets).ToList();
-            List<Pet> cats = pets.Where(c => c.Type == "Cat").OrderBy(c=>c.Name).ToList();
+            var pets = people.Where(p=>p.Gender=="Male").Where(p=>p.pets != null).SelectMany(p => p.pets);
+            var cats = pets.Where(c => c.Type == "Cat").OrderBy(c=>c.Name).ToList();
             return cats;
         }
 
@@ -42,8 +41,8 @@ namespace AGL.Domain
 
         private List<Pet> DoWork_1(List<Person> people)
         {
-            List<Pet> pets = people.Where(p => p.Gender == "Female").Where(p => p.pets != null).SelectMany(p => p.pets).ToList();
-            List<Pet> cats = pets.Where(c => c.Type == "Cat").OrderBy(c=>c.Name).ToList();
+            var pets = people.Where(p => p.Gender == "Female").Where(p => p.pets != null).SelectMany(p => p.pets);
+            var cats = pets.Where(c => c.Type == "Cat").OrderBy(c=>c.Name).ToList();
             return cats;
         }
     }

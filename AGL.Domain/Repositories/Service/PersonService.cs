@@ -26,7 +26,7 @@ namespace AGL.Domain
                 }
             }
             
-            List<Person> people = JsonConvert.DeserializeObject<List<Person>>(json);
+            var people = JsonConvert.DeserializeObject<List<Person>>(json);
 
             return people;
         }
